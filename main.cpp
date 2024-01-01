@@ -82,43 +82,81 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int power(int base, int exponent) 
+{ 
+    ignoreUnused(base, exponent); 
+    return {}; 
+}
 /*
  2)
  */
-
+bool canDrive(int age = 0, bool hasLicense=false)
+{
+    ignoreUnused(age, hasLicense);
+    return {};
+}
 /*
  3)
  */
-
+void setAlarm(int hour = 6, int minute = 30, bool is24Hours = true)
+{
+    ignoreUnused(hour, minute, is24Hours);
+}
 /*
  4)
  */
-
+char getGrade(int score)
+{
+    ignoreUnused(score);
+    return {};
+}
 /*
  5)
  */
-
+bool isTriangle(int sideA = 0, int sideB = 0, int sideC = 0)
+{
+    ignoreUnused(sideA, sideB, sideC);
+    return {};
+}
 /*
  6)
  */
-
+double getArea(int height, int width)
+{
+    ignoreUnused(height, width);
+    return {};
+}
 /*
  7)
  */
-
+void printCircumference(double radius = 0)
+{
+    ignoreUnused(radius);
+}
 /*
  8)
  */
-
+bool isPrime(int number)
+{
+    ignoreUnused(number);
+    return {};
+}
 /*
  9)
  */
-
+bool canBeSharedEvenly(int chocolates, int people)
+{
+    ignoreUnused(chocolates, people);
+    return {};
+}
 /*
  10)
  */
-
+double midiNoteToFrequency(int midiNote)
+{
+    ignoreUnused(midiNote);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
