@@ -121,7 +121,7 @@ bool isTriangle(int sideA = 0, int sideB = 0, int sideC = 0)
 /*
  6)
  */
-double getArea(int height, int width)
+double getArea(double height, double width)
 {
     ignoreUnused(height, width);
     return {};
@@ -175,29 +175,34 @@ int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
-    
     //1)
-    
+    auto twoPowerTen = power(2, 10);
     //2)
-    
+    auto shouldBuyCar = canDrive(18, true);
     //3)
-    
+    setAlarm(6, 30, true); // returns void
     //4)
-    
+    char studentGrade = getGrade(78);
     //5)
-    
+    bool isValidTriangle = isTriangle(6, 8, 10);
     //6)
-    
+    double rectangleArea = getArea(8.2, 5.4);
     //7)
-    
+    double circumference = midiNoteToFrequency(60);
     //8)
-    
+    bool isPrimeNumber = isPrime(7);
     //9)
-    
+    bool isEveryoneHappy = canBeSharedEvenly(12, 6);
     //10)
+    double notePitch = midiNoteToFrequency(60);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(
+      carRented, twoPowerTen, 
+      shouldBuyCar, studentGrade, 
+      isValidTriangle, rectangleArea, 
+      circumference, isPrimeNumber
+    );
+  
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
