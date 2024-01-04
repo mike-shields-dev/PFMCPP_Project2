@@ -144,14 +144,14 @@ bool rentACar(int rentalDuration, int carType = 0)  //spaces after ',' and aroun
     ignoreUnused(rentalDuration, carType);  //indentation is 4 SPACES.
     return true;                            //booleans are always expressed with true/false and never with integers
 }
-				    //a blank line between functions or types.
+                    //a blank line between functions or types.
 struct RelatedType  //Type Names begin with a Capital Letter and use CamelCase
 {
     double val, optimalVal;  //member names use camelCase, and begin with a lowercase letter.
                             //a blank line between member variables and member functions
     void setTypeToRelateTo(const OtherType& typeToRelateTo);  //member functions use camelCase, and begin with a lowercase letter.
 };
-				    //a blank line between functions or types.
+                    //a blank line between functions or types.
 void RelatedType::setTypeToRelateTo(const OtherType& typeToRelateTo) //a class member function defined outside of the class definition
 {
     val = (std::is_same<OtherType, double>::value ? 3 : 4);  //spaces around '='. Also demonstrating a ternary expression, which is wrapped in '()'
@@ -222,7 +222,7 @@ Once I receive the PR link: I will review the assignment.
    - add some `FIXME`s to the code directy which will appear as compiler errors.  
 - If I `Request Changes` via the Pull Request Review, you need to:
     - Make the necessary changes to your code and commit them.  
-	    - Be sure to compile and run your code to make sure you haven't added more errors or mistakes. 
+        - Be sure to compile and run your code to make sure you haven't added more errors or mistakes. 
     - Mark the checkboxes in the Pull Request review as complete ☑︎
     - Click `Resolve Conversation`
     - `Re-request` that I review your code, as explained at the end of Section 3)

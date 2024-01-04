@@ -15,16 +15,13 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+bool    - Boolean
+char    - Character
+int     - Integer
+float   - Floating point number
+double  - Floating point number
+void    - Abscence of a type
+
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
         - just ignore wchar_t. you do not need to declare 3 variables of type 'wchar_t'
@@ -60,14 +57,34 @@ video: Chapter 2 - Part 3
  */
 
 //2)
-void variableDeclarations()
+void variableDeclarations() 
 {
-    //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+  // example:
+    int number = 2; // declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     
+    int magicNumber = 3;
+    int dozen = 12;
+    int zero = 0;
+    
+    bool isOnline = true;
+    bool isAuthorized = false;
+    bool hasKey = true;
+    
+    char grade = 'A';
+    char dollar = '$';
+    char tilde = '~';
+    
+    float pi = 3.14f;
+    float phi = 1.618f;
+    float oneThird = 0.33f;
 
+    double oneQuarter = 0.25;
+    double tau = 6.28318530717959;
+    double eulersNum = 2.71828182845905;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, magicNumber, dozen, zero, isOnline, isAuthorized, 
+        hasKey, grade, dollar, tilde, pi, phi, oneThird, oneQuarter, tau, 
+        eulersNum); // passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -75,51 +92,101 @@ void variableDeclarations()
  example:
  note: this example shows the result after completing steps 3-8
  */
-bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
-{ 
-    ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
-    return {}; //if your function returns something other than void, add 'return {};' at the end of it.
-} 
+bool rentACar(int rentalDuration, int carType = 0) // function declaration with random number of arguments, arbitrary number of arguments have default value
+{
+    ignoreUnused(rentalDuration, carType); // passing each function parameter to
+                                         // the ignoreUnused() function
+    return {}; // if your function returns something other than void, add 'return
+             // {};' at the end of it.
+}
 
 /*
  1)
  */
+int power(int base, int exponent) 
+{
+    ignoreUnused(base, exponent);
+    return {};
+}
 
 /*
  2)
  */
+bool canDrive(int age = 0, bool hasLicense = false) 
+{
+    ignoreUnused(age, hasLicense);
+    return {};
+}
 
 /*
  3)
  */
+void setAlarm(int hour = 6, int minute = 30, bool is24Hours = true) 
+{
+    ignoreUnused(hour, minute, is24Hours);
+}
 
 /*
  4)
  */
+char getGrade(int score) 
+{
+    ignoreUnused(score);
+    return {};
+}
 
 /*
  5)
  */
+bool isTriangle(int sideA = 0, int sideB = 0, int sideC = 0) 
+{
+    ignoreUnused(sideA, sideB, sideC);
+    return {};
+}
 
 /*
  6)
  */
+double getArea(double height, double width) 
+{
+    ignoreUnused(height, width);
+    return {};
+}
 
 /*
  7)
  */
+void printCircumference(double radius = 0) 
+{ 
+    ignoreUnused(radius); 
+}
 
 /*
  8)
  */
+bool isPrime(int number) 
+{
+    ignoreUnused(number);
+    return {};
+}
 
 /*
  9)
  */
+bool canBeSharedEvenly(int chocolates, int people) 
+{
+    ignoreUnused(chocolates, people);
+    return {};
+}
 
 /*
  10)
  */
+double midiNoteToFrequency(int midiNote) 
+{
+    ignoreUnused(midiNote);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -135,33 +202,36 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  Wait for my code review.
  */
 
-int main()
+int main() 
 {
-    //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
+    // example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
+    auto carRented = rentACar(6, 2);
     
-    //1)
-    
-    //2)
-    
-    //3)
-    
-    //4)
-    
-    //5)
-    
-    //6)
-    
-    //7)
-    
-    //8)
-    
-    //9)
-    
-    //10)
-    
-    
-    ignoreUnused(carRented);
+    // 1)
+    auto twoPowerTen = power(2, 10);
+    // 2)
+    auto shouldBuyCar = canDrive(18, true);
+    // 3)
+    setAlarm(6, 30, true); // returns void
+    // 4)
+    char studentGrade = getGrade(78);
+    // 5)
+    bool isValidTriangle = isTriangle(6, 8, 10);
+    // 6)
+    double rectangleArea = getArea(8.2, 5.4);
+    // 7)
+    double circumference = midiNoteToFrequency(60);
+    // 8)
+    bool isPrimeNumber = isPrime(7);
+    // 9)
+    bool isEveryoneHappy = canBeSharedEvenly(12, 6);
+    // 10)
+    double notePitch = midiNoteToFrequency(60);
+
+    ignoreUnused(carRented, twoPowerTen, shouldBuyCar, studentGrade, 
+        isValidTriangle, rectangleArea, circumference, isPrimeNumber,
+        isEveryoneHappy, notePitch);
+
     std::cout << "good to go!" << std::endl;
-    return 0;    
+    return 0;
 }
